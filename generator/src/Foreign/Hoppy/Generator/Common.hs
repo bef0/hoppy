@@ -70,7 +70,7 @@ fromEitherM = flip either return
 
 -- | @maybeFail s x = maybe (fail s) x@
 maybeFail :: Monad m => String -> Maybe a -> m a
-maybeFail = fromMaybeM . fail
+maybeFail = fromMaybeM . error
 
 -- | @whileJust_ gen act@ runs @act@ on values generated from @gen@ until @gen@
 -- returns a @Nothing@.
